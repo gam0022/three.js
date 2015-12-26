@@ -231,6 +231,8 @@
 
 		<script id="vertex_shader" type="x-shader/x-vertex">
 
+			attribute vec3 position;
+
 			void main(void) {
 
 				gl_Position = vec4(position, 1.0);
@@ -272,7 +274,7 @@
 				camera = new THREE.Camera();
 
 				geometry = new THREE.PlaneBufferGeometry( 2.0, 2.0 );
-				material = new THREE.ShaderMaterial( {
+				material = new THREE.RawShaderMaterial( {
 					uniforms: {
 						time: { type: 'f', value: 0.0 },
 						resolution: { type: 'v2', value: new THREE.Vector2( 512, 512 ) },
